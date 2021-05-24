@@ -11,7 +11,7 @@ async function connectAWS() {
     console.log('Success Aws');
   } 
   catch (error) {
-    console.log('fail');
+    console.log('fail AWS');
   }
 }
 module.exports ={connectAWS};
