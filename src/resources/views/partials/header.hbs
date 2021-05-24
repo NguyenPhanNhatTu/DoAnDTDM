@@ -1,0 +1,49 @@
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">Khóa Học</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" data-id="{{this.auth.username}}">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle  " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" data-id="{{this.auth.username}}" data-target="#delete-course-model" aria-haspopup="true" aria-expanded="false">
+          {{auth.username}}
+          <img src="https://banner2.cleanpng.com/20180717/wwt/kisspng-computer-icons-avatar-black-and-white-clip-art-user-svg-5b4d85a21af0a8.1199159415318071381104.jpg" alt="" class="user-avatar">
+        </a>
+        <a  id="role" style="visibility: hidden;">
+          {{auth.role}}
+        </a>
+        <div class="dropdown-menu dropdown-auth" aria-labelledby="navbarDropdown" >
+        </div>
+      </li>
+    </ul>
+  </div>
+  </div>
+</nav>
+
+<script>
+  var roleUser = document.getElementById('role').innerHTML.toString().trim();
+  console.log(roleUser);
+  if(roleUser == "SINHVIEN")
+  {
+    console.log("Đây là sinh viên");
+    $(".dropdown-auth")[0].outerHTML = "<div class='dropdown-menu dropdown-auth' aria-labelledby='navbarDropdown' >"+`<a class="dropdown-item" href="/me/stored/courses/student">Khóa Học Đã Đăng Ký</a>` +`<div class="dropdown-divider"></div>` + `<a class="dropdown-item" href="/login">Đăng Xuất</a>` + "</div>";
+  }
+  else if(roleUser == "GIAOVIEN")
+  {
+    console.log('Đây là giáo viên');
+    $(".dropdown-auth")[0].outerHTML = "<div class='dropdown-menu dropdown-auth' aria-labelledby='navbarDropdown' >" + "<a class='dropdown-item' href='/courses/create'>Đăng Khóa Học</a>" +` <div class="dropdown-divider"></div>` + `<a class="dropdown-item" href="/me/stored/courses">Khóa Học Của Tôi</a>` +` <div class="dropdown-divider"></div>`+` <a class="dropdown-item" href="/login">Đăng Xuất</a>` + "</div>";
+  }
+
+ // localStorage.setItem('username','duynao4');
+  //var abc =localStorage.getItem('username');
+  
+</script>
