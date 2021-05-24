@@ -1,0 +1,45 @@
+{
+  "name": "doandientoandammay",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "alert-node": "^5.0.3",
+    "aws-sdk": "^2.912.0",
+    "babel-cli": "^6.26.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.2",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "local-storage": "^2.0.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.12.11",
+    "mongoose-delete": "^0.5.3",
+    "mongoose-slug-generator": "^1.0.4",
+    "morgan": "^1.10.0",
+    "node-sass": "^6.0.0",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build:prod": "babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-console.log.log --copy-files",
+    "start:prod": "node dist/src/index.js",
+    "beautiful": "prettier --single-quote --trailing-comma all --write src/**/*.{js,json,scss}",
+    "beautifulgit": "lint-staged",
+    "start": "nodemon --inspect src/index.js",
+    "watch": "node-sass --watch src/resources/scss/app.scss src/public/css/app.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NguyenPhanNhatTu/DoAnDTDM.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NguyenPhanNhatTu/DoAnDTDM/issues"
+  },
+  "homepage": "https://github.com/NguyenPhanNhatTu/DoAnDTDM#readme"
+}
