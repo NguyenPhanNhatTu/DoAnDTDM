@@ -10,7 +10,6 @@ const route = require('./routes');
 const db= require('./config/db/index');
 const dbAWS= require('./config/db/indexAws');
 //connnect 
-db.connect();
 dbAWS.connectAWS();
 app.use(
   express.urlencoded({

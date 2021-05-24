@@ -9,7 +9,7 @@ async function connect() {
     console.log('Success');
   } 
   catch (error) {
-    console.log('fail');
+    console.log('fail Mongoose');
   }
 }
 module.exports ={connect};
